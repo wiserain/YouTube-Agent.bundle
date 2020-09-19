@@ -424,6 +424,7 @@ def Update(metadata, media, lang, force, movie):
   
   if guid is None: #Api Fallback
     temp1, guid, temp2 = metadata.id.split("|")
+    metadata.id = metadata.id.split("|")[1]
     channel_id = guid if guid.startswith('UC') or guid.startswith('HC') else ''
     channel_title = None
 
